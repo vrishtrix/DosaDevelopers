@@ -1,6 +1,8 @@
 <script lang="ts">
-	import UnmuteLogo from './assets/logo.svg';
-	import BrandGoogle from './assets/icons/brand-google.svg';
+	import { Link } from 'svelte-routing';
+
+	import UnmuteLogo from '../assets/logo.svg';
+	import BrandGoogle from '../assets/icons/brand-google.svg';
 </script>
 
 <div
@@ -12,9 +14,9 @@
 		class="absolute top-8 md:left-8 right-8"
 	/>
 	<div class="w-full sm:w-2/3 lg:w-1/3 text-white">
-		<a href="/sign-up" class="uppercase text-darkWhite">Login</a><span
+		<Link to="/login" class="uppercase text-darkWhite">Login</Link><span
 			class="border-l mx-3"
-		></span><a href="/login" class="uppercase text-partyPurple">Sign Up</a>
+		></span><span class="uppercase text-partyPurple">Sign Up</span>
 	</div>
 
 	<div class="flex flex-col gap-2 w-full sm:w-2/3 lg:w-1/3">

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Link } from 'svelte-routing';
+
 	import UnmuteLogo from '../assets/logo.svg';
 	import BrandGoogle from '../assets/icons/brand-google.svg';
 </script>
@@ -8,9 +10,11 @@
 >
 	<img src="{UnmuteLogo}" alt="Unmute Logo" class="absolute top-8 left-8" />
 	<div class="w-full sm:w-1/2 lg:w-1/3 text-white">
-		<a href="/login" class="uppercase text-partyPurple">Login</a><span
+		<span class="uppercase text-partyPurple">Login</span><span
 			class="border-l mx-3"
-		></span><a href="/sign-up" class="uppercase text-darkWhite">Sign Up</a>
+		></span><Link to="/register" class="uppercase text-darkWhite"
+			>Sign Up</Link
+		>
 	</div>
 
 	<div class="flex flex-col gap-2 w-full sm:w-1/2 lg:w-1/3">
@@ -41,12 +45,12 @@
 			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
 		/>
 
-		<a
-			href="/forgot-password"
+		<Link
+			to="/forgot-password"
 			class="text-xs text-partyPurple my-4 uppercase"
 		>
 			Forgot Password?
-		</a>
+		</Link>
 
 		<button
 			type="submit"
