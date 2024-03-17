@@ -1,0 +1,16 @@
+type: 'application'
+language: 'typescript'
+
+project:
+    name: 'frontend'
+    description: 'Frontend for Dosa Platform'
+    owner: 'dosadevelopers.devsoc'
+    maintainers: ['vrishin.patel', 'aayush.chikara']
+
+tasks:
+    build:
+        command: 'vite build'
+        inputs:
+            - 'src/**/*'
+        outputs:
+            - 'dist'
