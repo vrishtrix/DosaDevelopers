@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Geist';
+		font-style: normal;
+		font-weight: 400;
+		src: url('./assets/fonts/geist-regular.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'Geist';
+		font-style: normal;
+		font-weight: 500;
+		src: url('./assets/fonts/geist-medium.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'Geist';
+		font-style: normal;
+		font-weight: 600;
+		src: url('./assets/fonts/geist-semibold.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'Geist';
+		font-style: normal;
+		font-weight: 700;
+		src: url('./assets/fonts/geist-bold.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'Owners Trial Wide';
+		font-style: normal;
+		font-weight: 500;
+		src: url('./assets/fonts/owners-trial-wide.otf') format('opentype');
+	}
+}

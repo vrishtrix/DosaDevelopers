@@ -2,3 +2,4 @@
 # moon
 .moon/cache
 .moon/docker
+.DS_Store
