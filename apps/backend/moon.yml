@@ -1,0 +1,17 @@
+type: 'application'
+language: 'go'
+
+project:
+    name: 'backend'
+    description: 'Backend for Dosa Platform'
+    owner: 'dosadevelopers.devsoc'
+    maintainers: ['vrishin.patel', 'prabhav.mishra']
+
+tasks:
+    build:
+        command: 'go build'
+        inputs:
+            - 'src/**/*'
+        outputs:
+            - 'backend'
+            - 'backend.exe'
