@@ -18,12 +18,17 @@
 	</div>
 
 	<div class="flex flex-col gap-2 w-full sm:w-1/2 lg:w-1/3">
-		<h1 class="text-white text-2xl">Welcome,</h1>
+		<h1 class="text-white text-2xl font-ownersTrialWide tracking-wider">
+			Welcome,
+		</h1>
 		<p class="text-darkWhite">Please enter your details below to log in</p>
 	</div>
 
 	<form action="" class="flex flex-col w-full sm:w-1/2 lg:w-1/3">
-		<label for="email" class="text-white text-sm mb-2 uppercase">
+		<label
+			for="email"
+			class="text-white text-sm mb-2 uppercase font-semibold"
+		>
 			Email
 		</label>
 		<input
@@ -34,7 +39,10 @@
 			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
 		/>
 
-		<label for="password" class="text-white text-sm mt-8 mb-2 uppercase">
+		<label
+			for="password"
+			class="text-white text-sm mt-8 mb-2 uppercase font-semibold"
+		>
 			Password
 		</label>
 		<input
@@ -47,7 +55,7 @@
 
 		<Link
 			to="/forgot-password"
-			class="text-xs text-partyPurple my-4 uppercase"
+			class="text-xs text-partyPurple my-4 uppercase font-semibold"
 		>
 			Forgot Password?
 		</Link>
