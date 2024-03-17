@@ -1,8 +1,7 @@
 package models
 
 type SignupUser struct {
-	Firstname string `json:"firstname" bson:"firstname"`
-	Lastname  string `json:"lastname" bson:"lastname"`
+	Fullname string `json:"fullname" bson:"fullname"`
 	Username  string `json:"username" bson:"username"`
 	Email     string `json:"email" bson:"email"`
 	Password  string `json:"password" bson:"password"`

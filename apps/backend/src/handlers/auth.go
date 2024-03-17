@@ -63,8 +63,7 @@ func SignupHandler(c *fiber.Ctx) error {
 		})
 	}
 	newUser := bson.M{
-		"firstname": user.Firstname,
-		"lastname":  user.Lastname,
+		"fullname": user.Fullname,
 		"username": user.Username,
 		"email":      user.Email,
 		"password":   string(hashedPassword),

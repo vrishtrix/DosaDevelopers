@@ -37,8 +37,8 @@ func StartServer() {
 	})
 
 	// Post Requests
-	app.Post("/login", handlers.LoginHandler)
-	app.Post("/signup", handlers.SignupHandler)
+	app.Post("/api/login", handlers.LoginHandler)
+	app.Post("/api/signup", handlers.SignupHandler)
 
 
 	// ChatApp
