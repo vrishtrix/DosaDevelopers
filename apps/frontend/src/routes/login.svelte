@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Link, navigate } from 'svelte-routing';
 	import Cookies from 'js-cookie';
+	import { onMount } from 'svelte';
+	import { isAuthenticated } from '../lib/middleware/auth';
 
 	import UnmuteLogo from '../assets/logo.svg';
 	import BrandGoogle from '../assets/icons/brand-google.svg';
@@ -50,6 +52,12 @@
 			})
 			.catch((err) => console.error(err));
 	};
+
+	onMount(() => {
+		if (isAuthenticated()) {
+			navigate('/protected');
+		}
+	});
 </script>
 
 <div

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Router, Route } from 'svelte-routing';
 	import { fade } from 'svelte/transition';
-	import Cookies from 'js-cookie';
 
 	import HomePage from './routes/home.svelte';
 	import LoginPage from './routes/login.svelte';
