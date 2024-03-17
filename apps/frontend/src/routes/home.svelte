@@ -1,5 +1,9 @@
-<a href="/login">Login</a>
+<script lang="ts">
+	import { Link } from 'svelte-routing';
+</script>
+
+<Link to="/login">Login</Link>
 
 <br />
 
-<a href="/register">Register</a>
+<Link to="/register">Register</Link>
