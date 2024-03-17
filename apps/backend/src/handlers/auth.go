@@ -107,7 +107,7 @@ func LoginHandler(c *fiber.Ctx) error {
 	err = bcrypt.CompareHashAndPassword([]byte(storedPassword), []byte(loginCredentials.Password))
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-			"message": "Invalid credentials",
+			"error": "Invalid credentials",
 		})
 	}
 
