@@ -38,3 +38,7 @@
 		src: url('./assets/fonts/owners-trial-wide.otf') format('opentype');
 	}
 }
+
+body {
+	background-color: #121212;
+}
