@@ -1,0 +1,5 @@
+bun:
+    version: '1.0.19'
+
+typescript:
+    includeSharedTypes: true
