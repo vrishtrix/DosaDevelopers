@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Link } from 'svelte-routing';
+	import { Link, navigate } from 'svelte-routing';
+	import Cookies from 'js-cookie';
 
 	import UnmuteLogo from '../assets/logo.svg';
 	import BrandGoogle from '../assets/icons/brand-google.svg';
@@ -25,6 +26,8 @@
 				value.toString();
 		}
 
+		console.log(credentials);
+
 		fetch('http://localhost:8080/api/login', {
 			method: 'POST',
 			cache: 'no-cache',
@@ -39,7 +42,11 @@
 			.then((data) => {
 				if (data.error) {
 					errorText = data.error;
+					return;
 				}
+
+				Cookies.set('PodiDosa', data.token);
+				navigate('/protected');
 			})
 			.catch((err) => console.error(err));
 	};
@@ -69,17 +76,17 @@
 		class="flex flex-col w-full sm:w-1/2 lg:w-1/3"
 	>
 		<label
-			for="email"
+			for="username"
 			class="text-white text-sm mb-2 uppercase font-semibold"
 		>
-			Email
+			Username
 		</label>
 		<input
 			required
 			type="text"
-			name="email"
-			id="email"
-			placeholder="example@gmail.com"
+			name="username"
+			id="username"
+			placeholder="johndoe"
 			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
