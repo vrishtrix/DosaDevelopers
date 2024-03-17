@@ -3,7 +3,7 @@ export default {
 	content: ['./index.html', './src/**/*.{svelte,js,ts,jsx,tsx}'],
 	theme: {
 		fontFamily: {
-			sans: ['Geist', 'ui-sans-serif', 'system-ui'],
+			sans: ['DM Sans', 'ui-sans-serif', 'system-ui'],
 			serif: ['ui-serif', 'Georgia'],
 			mono: ['ui-monospace', 'SFMono-Regular'],
 		},
