@@ -1,8 +1,16 @@
 <script lang="ts">
-	import { Link } from 'svelte-routing';
+	import { Link, navigate } from 'svelte-routing';
+	import { onMount } from 'svelte';
+	import { isAuthenticated } from '../lib/middleware/auth';
 
 	import UnmuteLogo from '../assets/logo.svg';
 	import BrandGoogle from '../assets/icons/brand-google.svg';
+
+	onMount(() => {
+		if (isAuthenticated()) {
+			navigate('/protected');
+		}
+	});
 </script>
 
 <div
