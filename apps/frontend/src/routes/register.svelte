@@ -20,7 +20,9 @@
 	</div>
 
 	<div class="flex flex-col gap-2 w-full sm:w-2/3 lg:w-1/3">
-		<h1 class="text-white text-2xl">Welcome,</h1>
+		<h1 class="text-white text-2xl font-ownersTrialWide tracking-wider">
+			Welcome,
+		</h1>
 		<p class="text-darkWhite">Please enter your details below to sign up</p>
 	</div>
 
