@@ -19,7 +19,7 @@ func StartServer() {
 	// Fiber instance
 	app := fiber.New()
 	corsConfig := cors.Config{
-		AllowOrigins:     "http://localhost:3000",
+		AllowOrigins:     "http://localhost:5173",
 		AllowMethods:     "POST, GET, OPTIONS, PUT, DELETE",
 		AllowHeaders:     "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Ngrok-Skip-Browser-Warning",
 		AllowCredentials: true,
@@ -40,7 +40,6 @@ func StartServer() {
 	app.Post("/api/login", handlers.LoginHandler)
 	app.Post("/api/signup", handlers.SignupHandler)
 
-
 	// ChatApp
 	app.Get("/ws", handlers.HomePage)
 	app.Get("/ws/chat", websocket.New(handlers.HandleConnections))
@@ -55,7 +54,7 @@ func StartServer() {
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
-	
+
 	// Db disconnection Request
 	handlers.DisconnectFromDB()
 }

@@ -3,6 +3,46 @@
 
 	import UnmuteLogo from '../assets/logo.svg';
 	import BrandGoogle from '../assets/icons/brand-google.svg';
+
+	let errorText: string | undefined;
+
+	type TCredentials = {
+		email?: string;
+		password?: string;
+	};
+
+	const onSumbit = (e: SubmitEvent) => {
+		errorText = undefined;
+
+		const formData = new FormData(
+			(e.target as HTMLFormElement) ?? undefined
+		);
+
+		const credentials: TCredentials = {};
+
+		for (let [key, value] of formData) {
+			credentials[key.toString() as keyof TCredentials] =
+				value.toString();
+		}
+
+		fetch('http://localhost:8080/api/login', {
+			method: 'POST',
+			cache: 'no-cache',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(credentials),
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				if (data.error) {
+					errorText = data.error;
+				}
+			})
+			.catch((err) => console.error(err));
+	};
 </script>
 
 <div
@@ -24,7 +64,10 @@
 		<p class="text-darkWhite">Please enter your details below to log in</p>
 	</div>
 
-	<form action="" class="flex flex-col w-full sm:w-1/2 lg:w-1/3">
+	<form
+		on:submit|preventDefault="{onSumbit}"
+		class="flex flex-col w-full sm:w-1/2 lg:w-1/3"
+	>
 		<label
 			for="email"
 			class="text-white text-sm mb-2 uppercase font-semibold"
@@ -32,11 +75,12 @@
 			Email
 		</label>
 		<input
+			required
 			type="text"
 			name="email"
 			id="email"
 			placeholder="example@gmail.com"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
 		<label
@@ -46,11 +90,12 @@
 			Password
 		</label>
 		<input
+			required
 			type="password"
 			name="password"
 			id="password"
 			placeholder="******"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
 		<Link
@@ -74,4 +119,8 @@
 		<img src="{BrandGoogle}" alt="Google Icon" class="h-4" />
 		<span> Sign in with Google </span>
 	</button>
+
+	{#if errorText}
+		<p class="text-white">{errorText}</p>
+	{/if}
 </div>

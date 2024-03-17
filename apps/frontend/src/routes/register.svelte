@@ -38,7 +38,7 @@
 			name="name"
 			id="name"
 			placeholder="Ramesh Waterwala"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
 		<label
@@ -52,7 +52,7 @@
 			name="email"
 			id="email"
 			placeholder="example@gmail.com"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
 		<label
@@ -66,7 +66,7 @@
 			name="password"
 			id="password"
 			placeholder="******"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
 		/>
 
 		<label
@@ -80,7 +80,7 @@
 			name="confpassword"
 			id="confpassword"
 			placeholder="******"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 mb-8"
+			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 mb-8 text-white"
 		/>
 
 		<button
