@@ -18,7 +18,7 @@
 <Router {basepath}>
 	<Route path="/" component="{HomePage}" />
 	<Route path="/login" component="{LoginPage}" />
-	<Route Path="/register" component="{RegisterPage}" />
+	<Route path="/register" component="{RegisterPage}" />
 
-	<Route Path="/protected" component="{ProtectedPage}" />
+	<Route path="/protected" component="{ProtectedPage}" />
 </Router>
