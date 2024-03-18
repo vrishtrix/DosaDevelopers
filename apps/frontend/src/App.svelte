@@ -28,6 +28,7 @@
 <Router {basepath}>
 	<Route path="/" component="{HomePage}" />
 	<Route path="/login" component="{LoginPage}" />
+	<Route path="/register" component="{RegisterPage}" />
 
 	<Route path="/dashboard" component="{DashboardPage}" />
 	<Route path="/drafts" component="{DraftsPage}" />
@@ -36,8 +37,6 @@
 	<Route path="/payments" component="{PaymentsPage}" />
 	<Route path="/profile" component="{ProfilePage}" />
 	<Route path="/settings" component="{SettingsPage}" />
-
-	<Route path="/register" component="{RegisterPage}" />
 	<Route path="/protected" component="{ProtectedPage}" />
 	<Route path="/chat" component="{ChatPage}" />
 	<Route path="/contracts" component="{ContractsPage}" />
