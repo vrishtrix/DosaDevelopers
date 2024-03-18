@@ -27,25 +27,30 @@
     import MusicBurn from '../assets/icons/MusicBurn.png'
     import Play from '../assets/icons/play.png'; 
     import Tile1 from '../assets/icons/tile1.png'; 
+    import Tile2 from '../assets/icons/tile2.png'; 
+    import Tile3 from '../assets/icons/tile3.png'; 
+    import Tile4 from '../assets/icons/tile4.png'; 
+    import Tile5 from '../assets/icons/tile5.png'; 
 </script>
 <style>
     .no-scrollbar::-webkit-scrollbar {
         display: none;
         }
     .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
     }
+    
 </style>
 
 <div class="flex bg-[#121212] overflow-x-hidden w-full flex-col">
-<div class="w-full h-fit bg-black flex">
-    <div class="pl-8 pt-4 pb-2 border-b border-[#3C3C4399]">
-        <img src={UnmuteLogo} alt="Unmute Logo" class="max-w-120" />
+    <div class="w-full h-fit bg-[#121212] border-b border-[#3C3C4399] flex sticky top-0">
+        <div class="pl-8 pt-4 pb-2 border-b border-[#3C3C4399]">
+            <img src={UnmuteLogo} alt="Unmute Logo" class="max-w-120" />
+        </div>
     </div>
-</div>
     <div class = "flex flex-row">
-        <div class=" bg-[#FFFFFF05] p-8 border-r border-[#3C3C4399]">
+        <div class=" bg-[#FFFFFF05] p-8 border-r border-[#3C3C4399] ">
             <ul class="list-none p-0 text-white">
                 
                 <li class="mb-9">
@@ -115,30 +120,50 @@
                     <h2 class="text-white text-3xl font-semibold mb-4">Your Music</h2>
                 </div>
                 <div class="flex flex-nowrap w-screen gap-8">
-                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-4 scroll-snap-align-start">
+                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start">
                         <img src="{ Tile1 }" alt="Tile1" class="w-full h-auto mb-2">
-                        <h3 class="text-white text-lg font-semibold mb-2">Title 1</h3>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Play</button>
+                        <h3 class="text-white text-lg font-semibold mb-2">The Less I Know T...</h3>
+                        <button class="bg-[#785BEB] text-spaceGray w-full flex items-center justify-center px-4 py-2 rounded">
+                            <img src="{Play}" alt="Play Button" class="mr-2">
+                            Play
+                        </button>
+                        
+                    </div>              
+                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start">
+                        <img src="{ Tile2 }" alt="Tile2" class="w-full h-auto mb-2">
+                        <h3 class="text-white text-lg font-semibold mb-2">Zakir</h3>
+                        <button class="bg-[#785BEB] text-spaceGray w-full flex items-center justify-center px-4 py-2 rounded">
+                            <img src="{Play}" alt="Play Button" class="mr-2">
+                            Play
+                        </button>
+                        
                     </div>
-                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-4 scroll-snap-align-start">
-                        <img src="{ Tile1 }" alt="Tile1" class="w-full h-auto mb-2">
-                        <h3 class="text-white text-lg font-semibold mb-2">Title 1</h3>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Play</button>
+                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start">
+                        <img src="{ Tile3 }" alt="Tile3" class="w-full h-auto mb-2">
+                        <h3 class="text-white text-lg font-semibold mb-2">FE!N</h3>
+                        <button class="bg-[#785BEB] text-spaceGray w-full flex items-center justify-center px-4 py-2 rounded">
+                            <img src="{Play}" alt="Play Button" class="mr-2">
+                            Play
+                        </button>
+                        
                     </div>
-                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-4 scroll-snap-align-start">
-                        <img src="{ Tile1 }" alt="Tile1" class="w-full h-auto mb-2">
-                        <h3 class="text-white text-lg font-semibold mb-2">Title 1</h3>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Play</button>
+                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start">
+                        <img src="{ Tile4 }" alt="Tile4" class="w-full h-auto mb-2">
+                        <h3 class="text-white text-lg font-semibold mb-2">Zakir</h3>
+                        <button class="bg-[#785BEB] text-spaceGray w-full flex items-center justify-center px-4 py-2 rounded">
+                            <img src="{Play}" alt="Play Button" class="mr-2">
+                            Play
+                        </button>
+                        
                     </div>
-                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-4 scroll-snap-align-start">
-                        <img src="{ Tile1 }" alt="Tile1" class="w-full h-auto mb-2">
-                        <h3 class="text-white text-lg font-semibold mb-2">Title 1</h3>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Play</button>
-                    </div>
-                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-4 scroll-snap-align-start">
-                        <img src="{ Tile1 }" alt="Tile1" class="w-full h-auto mb-2">
-                        <h3 class="text-white text-lg font-semibold mb-2">Title 1</h3>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Play</button>
+                    <div class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start">
+                        <img src="{ Tile4 }" alt="Tile4" class="w-full h-auto mb-2">
+                        <h3 class="text-white text-lg font-semibold mb-2">Zakir</h3>
+                        <button class="bg-[#785BEB] text-spaceGray w-full flex items-center justify-center px-4 py-2 rounded">
+                            <img src="{Play}" alt="Play Button" class="mr-2">
+                            Play
+                        </button>
+                        
                     </div>
                 </div>
                 
