@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"log"
+
 	"dosadevelopers.devsoc/backend/src/models"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
@@ -9,7 +10,6 @@ import (
 
 var clients = make(map[*websocket.Conn]bool)
 var broadcast = make(chan models.Message)
-
 
 func HomePage(c *fiber.Ctx) error {
 	return c.SendString("Welcome to the Chat Room!")
