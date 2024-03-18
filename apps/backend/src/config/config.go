@@ -18,4 +18,5 @@ var (
 	Client_ID     string = os.Getenv("CLIENT_ID")
 	Client_Secret string = os.Getenv("CLIENT_SECRET")
 	Login_URL     string = os.Getenv("LOGIN_URL")
+	Contract_URL  string = os.Getenv("CONTRACT_URL")
 )

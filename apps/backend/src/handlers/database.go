@@ -4,16 +4,18 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"dosadevelopers.devsoc/backend/src/config"
 	"time"
+
+	"dosadevelopers.devsoc/backend/src/config"
 
 	_ "github.com/joho/godotenv/autoload"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-
 var usercollection *mongo.Collection
+var contractcollection *mongo.Collection
+var contractrespcollection *mongo.Collection
 var client *mongo.Client
 
 func ConnectToDB() {
@@ -46,15 +48,22 @@ func ConnectToDB() {
 	fmt.Println("Connected to MongoDB Atlas!")
 
 	usercollection = client.Database("unmute").Collection("user")
+	contractcollection = client.Database("unmute").Collection("contract")
+	contractrespcollection = client.Database("unmute").Collection("contractresponse")
 
 }
 
 func DisconnectFromDB() {
-	// Disconnect from MongoDB Atlas
-	err := client.Disconnect(context.Background())
-	if err != nil {
-		log.Fatal(err)
+	if client != nil { // Assuming 'client' is your MongoDB client instance variable
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+		defer cancel()
+		err := client.Disconnect(ctx)
+		if err != nil {
+			fmt.Println("Failed to disconnect from MongoDB:", err)
+		} else {
+			fmt.Println("Disconnected from MongoDB.")
+		}
+	} else {
+		fmt.Println("MongoDB client is nil, cannot disconnect.")
 	}
-
-	fmt.Println("Disconnected from MongoDB Atlas!")
 }
