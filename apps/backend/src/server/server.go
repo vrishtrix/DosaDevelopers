@@ -4,6 +4,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"dosadevelopers.devsoc/backend/src/config"
 	"dosadevelopers.devsoc/backend/src/handlers"
@@ -16,6 +17,18 @@ import (
 func StartServer() {
 	handlers.ConnectToDB()
 	defer handlers.DisconnectFromDB()
+	handlers.AuthenticateWithVenly()
+
+	// Set up a ticker to refresh the token every 6 minutes
+	ticker := time.NewTicker(6 * time.Minute)
+	go func() {
+		for {
+			select {
+			case <-ticker.C:
+				handlers.AuthenticateWithVenly()
+			}
+		}
+	}()
 	// Fiber instance
 	app := fiber.New()
 	corsConfig := cors.Config{
@@ -39,6 +52,7 @@ func StartServer() {
 	// Post Requests
 	app.Post("/api/login", handlers.LoginHandler)
 	app.Post("/api/signup", handlers.SignupHandler)
+	app.Post("/api/contracts/deployment", handlers.ContractDeployment)
 
 	// ChatApp
 	app.Get("/ws", handlers.HomePage)
