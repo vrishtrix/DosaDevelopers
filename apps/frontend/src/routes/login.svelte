@@ -30,7 +30,7 @@
 
 		console.log(credentials);
 
-		fetch('https://0cb7f82aadeed5.lhr.life/api/login', {
+		fetch(`${import.meta.env.VITE_SERVER_URL}/api/login`, {
 			method: 'POST',
 			cache: 'no-cache',
 			headers: {

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GreenCheckIcon from '../../assets/icons/green-check.svg';
 	import RedCrossIcon from '../../assets/icons/red-cross.svg';
+	import YellowCheckIcon from '../../assets/icons/yellow-check.svg';
 
 	export let contactName: string;
 	export let duration: string;
@@ -10,6 +11,7 @@
 	const iconMap: Record<string, string> = {
 		signed: GreenCheckIcon,
 		cancelled: RedCrossIcon,
+		progress: YellowCheckIcon,
 	};
 </script>
 
