@@ -8,7 +8,55 @@
 	import ContactCard from '../lib/components/chat/ContactCard.svelte';
 	import ChatBubble from '../lib/components/chat/ChatBubble.svelte';
 
+	import { messages, username } from '../lib/store/user';
+
 	let messageBox: HTMLInputElement;
+
+	const socket = new WebSocket(import.meta.env.VITE_WEBSOCKET_CHAT_URL);
+
+	socket.onopen = () => {
+		socket.send(
+			JSON.stringify({
+				action: 'initial_connection',
+				username: $username,
+			})
+		);
+		console.log('Websocket opened successfully!');
+	};
+
+	socket.onmessage = (e) => {
+		const data = JSON.parse(e.data);
+
+		//@ts-ignore
+		messages.update((msgs) => {
+			if (Array.isArray(data)) return [...msgs, ...data];
+			return [...msgs, data];
+		});
+	};
+
+	const sendMessage = () => {
+		if (messageBox.value.length) {
+			socket.send(
+				JSON.stringify({
+					action: 'post_message',
+					message: messageBox.value,
+				})
+			);
+
+			//@ts-ignore
+			messages.update((msgs) => {
+				return [
+					...msgs,
+					{
+						username: $username,
+						type: 'sent',
+						message: messageBox.value,
+					},
+				];
+			});
+		}
+		messageBox.value = '';
+	};
 </script>
 
 <div class="grid grid-cols-3 bg-spaceGrey">
@@ -18,13 +66,15 @@
 			<img src="{EditIcon}" alt="Edit icon" class="h-8" />
 		</div>
 
-		{#each Array(5).fill(0) as item}
-			<ContactCard
-				contactName="Vispute"
-				lastText="are you busy right now?"
-				unreadTexts="{2}"
-			/>
-		{/each}
+		<div class="overflow-y-scroll">
+			{#each Array(5).fill(0) as item}
+				<ContactCard
+					contactName="Vispute"
+					lastText="are you busy right now?"
+					unreadTexts="{2}"
+				/>
+			{/each}
+		</div>
 	</div>
 
 	<div class="col-span-2 h-full">
@@ -44,15 +94,10 @@
 			</div>
 		</div>
 
-		<div class="py-4 px-8 overflow-y-scroll h-full">
-			<ChatBubble
-				type="sent"
-				message="Hey There! I'm Aditya, nice to meet you. Are you here for the gig too?"
-			/>
-			<ChatBubble
-				type="received"
-				message="Hey There! I'm Aditya, nice to meet you. Are you here for the gig too?"
-			/>
+		<div class="py-4 px-8 overflow-y-scroll messages-height">
+			{#each $messages as message}
+				<ChatBubble type="{message.type}" message="{message.message}" />
+			{/each}
 		</div>
 
 		<div
@@ -78,6 +123,8 @@
 			<img src="{MicrophoneIcon}" alt="Microphone Icon" />
 
 			<button
+				on:click="{sendMessage}"
+				type="submit"
 				class="relative rounded-full bg-partyPurple aspect-square w-10"
 			>
 				<img
@@ -89,3 +136,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.messages-height {
+		height: calc(100vh - 200px);
+	}
+</style>

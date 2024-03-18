@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let type: 'sent' | 'received';
-	export let message: string;
+	export let type: 'sent' | 'received' | undefined;
+	export let message: string | undefined;
 </script>
 
 <div
