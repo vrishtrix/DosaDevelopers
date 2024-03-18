@@ -63,7 +63,13 @@
 <div
 	class="w-full min-h-screen bg-spaceGrey flex flex-col items-center justify-center gap-8 p-8"
 >
-	<img src="{UnmuteLogo}" alt="Unmute Logo" class="absolute top-8 left-8" />
+	<Link to="/">
+		<img
+			src="{UnmuteLogo}"
+			alt="Unmute Logo"
+			class="absolute top-8 left-8"
+		/>
+	</Link>
 	<div class="w-full sm:w-1/2 lg:w-1/3 text-white">
 		<span class="uppercase text-partyPurple">Login</span><span
 			class="border-l mx-3"
