@@ -21,6 +21,7 @@
 				username: $username,
 			})
 		);
+		console.log('Websocket opened successfully!');
 	};
 
 	socket.onmessage = (e) => {
@@ -93,7 +94,7 @@
 			</div>
 		</div>
 
-		<div class="py-4 px-8 overflow-y-scroll h-full">
+		<div class="py-4 px-8 overflow-y-scroll messages-height">
 			{#each $messages as message}
 				<ChatBubble type="{message.type}" message="{message.message}" />
 			{/each}
@@ -123,6 +124,7 @@
 
 			<button
 				on:click="{sendMessage}"
+				type="submit"
 				class="relative rounded-full bg-partyPurple aspect-square w-10"
 			>
 				<img
@@ -134,3 +136,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.messages-height {
+		height: calc(100vh - 200px);
+	}
+</style>
