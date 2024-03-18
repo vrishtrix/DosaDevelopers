@@ -1,34 +1,47 @@
 <script lang="ts">
 	import { Router, Route } from 'svelte-routing';
-	// import { fade } from 'svelte/transition'
+	import { fade } from 'svelte/transition';
 
 	import HomePage from './routes/home.svelte';
 	import LoginPage from './routes/login.svelte';
 	import RegisterPage from './routes/register.svelte';
-	import Dashboard from './routes/dashboard.svelte';
-	import Drafts from './routes/drafts.svelte'; 
-	import Chats from './routes/chats.svelte'; 
-	import Explore from './routes/explore.svelte'; 
-	import WebsiteBuilder from './routes/websiteBuilder.svelte'; 
-	import Payments from './routes/payments.svelte'; 
-	import Contracts from './routes/contracts.svelte'; 
-	import Profile from './routes/profile.svelte'; 
-	import Settings from './routes/settings.svelte'; 
+
+	import DashboardPage from './routes/dashboard.svelte';
+	import DraftsPage from './routes/drafts.svelte'; 
+	import ExplorePage from './routes/explore.svelte'; 
+	import WebsiteBuilderPage from './routes/websiteBuilder.svelte'; 
+	import PaymentsPage from './routes/payments.svelte';  
+	import ProfilePage from './routes/profile.svelte'; 
+	import SettingsPage from './routes/settings.svelte'; 
+	import ProtectedPage from './routes/protected.svelte';
+	import ChatPage from './routes/chat.svelte';
+	import ContractsPage from './routes/contracts.svelte';
+
 
 	const basepath = '/';
+
+	const viewtransition = () => ({
+		fn: fade,
+		duration: 500,
+	});
 </script>
 
 <Router {basepath}>
 	<Route path="/" component="{HomePage}" />
 	<Route path="/login" component="{LoginPage}" />
-	<Route Path="/register" component="{RegisterPage}" />
-	<Route path="/dashboard" component="{Dashboard}" />
-	<Route path="/drafts" component="{Drafts}" />
-	<Route path="/chats" component = "{Chats}" />
-	<Route path="/explore" component="{Explore}" />
-	<Route path="/websiteBuilder" component="{WebsiteBuilder}" />
-	<Route path="/payments" component="{Payments}" />
-	<Route path="/contracts" component="{Contracts}" />
-	<Route path="/profile" component="{Profile}" />
-	<Route path="/settings" component="{Settings}" />
+
+	<Route path="/dashboard" component="{DashboardPage}" />
+	<Route path="/drafts" component="{DraftsPage}" />
+	<Route path="/chats" component = "{ChatsPage}" />
+	<Route path="/explore" component="{ExplorePage}" />
+	<Route path="/websiteBuilder" component="{WebsiteBuilderPage}" />
+	<Route path="/payments" component="{PaymentsPage}" />
+	<Route path="/profile" component="{ProfilePage}" />
+	<Route path="/settings" component="{Settings{age}" />
+
+	<Route path="/register" component="{RegisterPage}" />
+	<Route path="/protected" component="{ProtectedPage}" />
+	<Route path="/chat" component="{ChatPage}" />
+	<Route path="/contracts" component="{ContractsPage}" />
+
 </Router>

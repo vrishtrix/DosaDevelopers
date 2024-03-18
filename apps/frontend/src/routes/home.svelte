@@ -2,8 +2,8 @@
 	import { Link } from 'svelte-routing';
 </script>
 
-<Link to="/login">Login</Link>
+<Link to="/login" class="text-white">Login</Link>
 
 <br />
 
-<Link to="/register">Register</Link>
+<Link to="/register" class="text-white">Register</Link>
