@@ -7,6 +7,7 @@
 	import RegisterPage from './routes/register.svelte';
 	import ProtectedPage from './routes/protected.svelte';
 	import ChatPage from './routes/chat.svelte';
+	import ContractsPage from './routes/contracts.svelte';
 
 	const basepath = '/';
 
@@ -23,4 +24,5 @@
 
 	<Route path="/protected" component="{ProtectedPage}" />
 	<Route path="/chat" component="{ChatPage}" />
+	<Route path="/contracts" component="{ContractsPage}" />
 </Router>

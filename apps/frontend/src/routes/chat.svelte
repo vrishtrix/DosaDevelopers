@@ -18,13 +18,15 @@
 			<img src="{EditIcon}" alt="Edit icon" class="h-8" />
 		</div>
 
-		{#each Array(5).fill(0) as item}
-			<ContactCard
-				contactName="Vispute"
-				lastText="are you busy right now?"
-				unreadTexts="{2}"
-			/>
-		{/each}
+		<div class="overflow-y-scroll">
+			{#each Array(5).fill(0) as item}
+				<ContactCard
+					contactName="Vispute"
+					lastText="are you busy right now?"
+					unreadTexts="{2}"
+				/>
+			{/each}
+		</div>
 	</div>
 
 	<div class="col-span-2 h-full">
