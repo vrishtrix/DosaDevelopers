@@ -26,6 +26,15 @@
 	import Tile4 from '../assets/icons/tile4.png';
 	import DownArrowIcon from '../assets/icons/arrow-down.svg';
 	import Player from '../lib/components/player/Player.svelte';
+	import { navigate } from 'svelte-routing';
+	import { isAuthenticated } from '../lib/middleware/auth';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		if (!isAuthenticated()) {
+			navigate('/');
+		}
+	});
 
 	const {
 		elements: { root, content, trigger },

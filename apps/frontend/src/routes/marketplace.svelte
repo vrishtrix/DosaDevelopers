@@ -1,6 +1,15 @@
 <script lang="ts">
-	import AppShell from './../lib/components/AppShell.svelte';
+	import AppShell from '../lib/components/AppShell.svelte';
 	import CategoryBackground from '../assets/category-bg.png';
+	import { navigate } from 'svelte-routing';
+	import { isAuthenticated, signOut } from '../lib/middleware/auth';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		if (!isAuthenticated()) {
+			navigate('/');
+		}
+	});
 
 	const categories = ['Events Near You', 'Local Gigs', 'Competitions'];
 	const events = [

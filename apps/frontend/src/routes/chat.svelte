@@ -9,6 +9,15 @@
 	import ChatBubble from '../lib/components/chat/ChatBubble.svelte';
 
 	import { messages, username } from '../lib/store/user';
+	import { navigate } from 'svelte-routing';
+	import { isAuthenticated, signOut } from '../lib/middleware/auth';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		if (!isAuthenticated()) {
+			navigate('/');
+		}
+	});
 
 	let messageBox: HTMLInputElement;
 

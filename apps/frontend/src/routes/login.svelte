@@ -48,14 +48,14 @@
 				}
 
 				Cookies.set('PodiDosa', data.token);
-				navigate('/protected');
+				navigate('/dashboard');
 			})
 			.catch((err) => console.error(err));
 	};
 
 	onMount(() => {
 		if (isAuthenticated()) {
-			navigate('/protected');
+			navigate('/dashboard');
 		}
 	});
 </script>
