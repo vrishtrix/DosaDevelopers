@@ -25,6 +25,7 @@
 	import Tile3 from '../assets/icons/tile3.png';
 	import Tile4 from '../assets/icons/tile4.png';
 	import DownArrowIcon from '../assets/icons/arrow-down.svg';
+	import Player from '../lib/components/player/Player.svelte';
 
 	const {
 		elements: { root, content, trigger },
@@ -37,10 +38,17 @@
 	class="flex bg-[#121212] overflow-x-hidden w-full flex-col"
 >
 	<div
-		class="w-full h-fit bg-[#121212] border-b border-[#3C3C4399] flex sticky top-0 items-center px-8"
+		class="w-full h-fit bg-[#121212] border-b border-[#3C3C4399] flex sticky top-0 items-center gap-8 py-2 px-8"
 	>
 		<div class="py-2 border-b border-[#3C3C4399]">
 			<img src="{UnmuteLogo}" alt="Unmute Logo" class="max-w-120" />
+		</div>
+
+		<div class="w-1/2 mx-auto">
+			<Player
+				artists="Tame Impala"
+				title="The lesser I know the better"
+			/>
 		</div>
 
 		<div class="ml-auto flex gap-4">

@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="flex flex-col justify-between items-start h-screen w-full p-8 bg-contain bg-center-center"
+	class="flex flex-col justify-between items-start h-screen w-full p-8 bg-contain"
 	style="background: url({landingBg}) no-repeat;"
 >
 	<img src="{UnmuteLogo}" alt="Unmute Logo" class="h-[75px]" />
