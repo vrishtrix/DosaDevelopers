@@ -26,7 +26,7 @@ func SignupHandler(c *fiber.Ctx) error {
 		})
 	}
 
-	emailRegex := regexp.MustCompile(`^[a-zA-Z0-9._%+-]+@vitstudent\.ac\.in$`)
+	emailRegex := regexp.MustCompile(`^[a-zA-Z0-9._%+-]+@gmail\.com$`)
 	if !emailRegex.MatchString(user.Email) {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": "Invalid email domain",
@@ -107,7 +107,7 @@ func LoginHandler(c *fiber.Ctx) error {
 	err = bcrypt.CompareHashAndPassword([]byte(storedPassword), []byte(loginCredentials.Password))
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-			"message": "Invalid credentials",
+			"error": "Invalid credentials",
 		})
 	}
 
