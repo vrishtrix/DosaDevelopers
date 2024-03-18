@@ -5,9 +5,18 @@
 	import HomePage from './routes/home.svelte';
 	import LoginPage from './routes/login.svelte';
 	import RegisterPage from './routes/register.svelte';
+
+	import DashboardPage from './routes/dashboard.svelte';
+	import DraftsPage from './routes/drafts.svelte'; 
+	import ExplorePage from './routes/explore.svelte'; 
+	import WebsiteBuilderPage from './routes/websiteBuilder.svelte'; 
+	import PaymentsPage from './routes/payments.svelte';  
+	import ProfilePage from './routes/profile.svelte'; 
+	import SettingsPage from './routes/settings.svelte'; 
 	import ProtectedPage from './routes/protected.svelte';
 	import ChatPage from './routes/chat.svelte';
 	import ContractsPage from './routes/contracts.svelte';
+
 
 	const basepath = '/';
 
@@ -20,9 +29,19 @@
 <Router {basepath}>
 	<Route path="/" component="{HomePage}" />
 	<Route path="/login" component="{LoginPage}" />
-	<Route path="/register" component="{RegisterPage}" />
 
+	<Route path="/dashboard" component="{DashboardPage}" />
+	<Route path="/drafts" component="{DraftsPage}" />
+	<Route path="/chats" component = "{ChatsPage}" />
+	<Route path="/explore" component="{ExplorePage}" />
+	<Route path="/websiteBuilder" component="{WebsiteBuilderPage}" />
+	<Route path="/payments" component="{PaymentsPage}" />
+	<Route path="/profile" component="{ProfilePage}" />
+	<Route path="/settings" component="{Settings{age}" />
+
+	<Route path="/register" component="{RegisterPage}" />
 	<Route path="/protected" component="{ProtectedPage}" />
 	<Route path="/chat" component="{ChatPage}" />
 	<Route path="/contracts" component="{ContractsPage}" />
+
 </Router>
