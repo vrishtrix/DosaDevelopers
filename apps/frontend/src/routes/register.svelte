@@ -57,7 +57,7 @@
 
 	onMount(() => {
 		if (isAuthenticated()) {
-			navigate('/protected');
+			navigate('/dashboard');
 		}
 	});
 </script>

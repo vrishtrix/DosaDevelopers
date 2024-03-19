@@ -146,13 +146,16 @@
 					</Link>
 				</li>
 				<li class="mb-9">
-					<Link to="/payments" class="flex items-center">
+					<a
+						href="https://buy.stripe.com/test_4gw8zD5Jk6lg2088ww"
+						class="flex items-center"
+					>
 						<img
 							src="{PaymentsIcon}"
 							alt="Payments"
 							class="w-5 h-5 mr-2"
 						/> Payments
-					</Link>
+					</a>
 				</li>
 				<li class="mb-9">
 					<Link to="/contracts" class="flex items-center">
