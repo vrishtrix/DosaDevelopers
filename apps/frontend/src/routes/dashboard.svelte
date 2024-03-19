@@ -24,6 +24,7 @@
 	import Tile2 from '../assets/icons/tile2.png';
 	import Tile3 from '../assets/icons/tile3.png';
 	import Tile4 from '../assets/icons/tile4.png';
+	import marketPlaceIcon from '../assets/icons/marketPlaceIcon.png'; 
 	import DownArrowIcon from '../assets/icons/arrow-down.svg';
 	import Player from '../lib/components/player/Player.svelte';
 	import { navigate } from 'svelte-routing';
@@ -136,12 +137,12 @@
 					</Link>
 				</li>
 				<li class="mb-9">
-					<Link to="/website-builder" class="flex items-center">
+					<Link to="/marketplace" class="flex items-center">
 						<img
-							src="{WebsiteBuilderIcon}"
+							src="{marketPlaceIcon}"
 							alt="Website Builder"
 							class="w-5 h-5 mr-2"
-						/> Website Builder
+						/> Market Place
 					</Link>
 				</li>
 				<li class="mb-9">
