@@ -3,6 +3,7 @@ package handlers
 import (
 	"log"
 	"time"
+
 	"dosadevelopers.devsoc/backend/src/models"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
@@ -13,11 +14,13 @@ var broadcast = make(chan models.Message)
 
 // Predefined simple AI responses
 var Replies = map[string]string{
-	"hello": "Hi wassup hwru?",
-	"bye":   "bbye",
-	"thanks": "You're welcome!",
+	"hello":          "Hi wassup hwru?",
+	"bye":            "bbye",
+	"thanks":         "You're welcome!",
 	"Where are you?": "I'm everywhere!",
+	"How are you?":   "I'm good hby?",
 }
+
 func HomePage(c *fiber.Ctx) error {
 	return c.SendString("Welcome to the Chat Room!")
 }
@@ -44,9 +47,8 @@ func HandleConnections(c *websocket.Conn) {
 		time.Sleep(3 * time.Second)
 		Msg := models.Message{
 			Username: "Vispute",
-			Message:     Response,
-			Type:    "received",
-
+			Message:  Response,
+			Type:     "received",
 		}
 
 		broadcast <- Msg
@@ -72,5 +74,5 @@ func generateResponse(input string) string {
 			return reply
 		}
 	}
-	return "I'm dipping ttyl."
+	return "Hi"
 }

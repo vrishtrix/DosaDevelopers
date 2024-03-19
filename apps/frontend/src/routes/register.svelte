@@ -50,7 +50,7 @@
 				}
 
 				Cookies.set('PodiDosa', data.token);
-				navigate('/protected');
+				navigate('/dashboard');
 			})
 			.catch((err) => console.error(err));
 	};
@@ -63,7 +63,7 @@
 </script>
 
 <div
-	class="w-full min-h-screen bg-spaceGrey flex flex-col items-center justify-center gap-8 p-8"
+	class="flex flex-col items-center justify-center w-full min-h-screen gap-8 p-8 bg-spaceGrey"
 >
 	<Link to="/">
 		<img
@@ -72,14 +72,14 @@
 			class="absolute top-8 left-8"
 		/>
 	</Link>
-	<div class="w-full sm:w-2/3 lg:w-1/3 text-white">
+	<div class="w-full text-white sm:w-2/3 lg:w-1/3">
 		<Link to="/login" class="uppercase text-darkWhite">Login</Link><span
-			class="border-l mx-3"
+			class="mx-3 border-l"
 		></span><span class="uppercase text-partyPurple">Sign Up</span>
 	</div>
 
-	<div class="flex flex-col gap-2 w-full sm:w-2/3 lg:w-1/3">
-		<h1 class="text-white text-2xl font-ownersTrialWide tracking-wider">
+	<div class="flex flex-col w-full gap-2 sm:w-2/3 lg:w-1/3">
+		<h1 class="text-2xl tracking-wider text-white font-ownersTrialWide">
 			Welcome,
 		</h1>
 		<p class="text-darkWhite">Please enter your details below to sign up</p>
@@ -91,7 +91,7 @@
 	>
 		<label
 			for="fullname"
-			class="text-white text-sm mb-2 uppercase font-semibold"
+			class="mb-2 text-sm font-semibold text-white uppercase"
 		>
 			Full Name
 		</label>
@@ -100,12 +100,12 @@
 			name="fullname"
 			id="fullname"
 			placeholder="Ramesh Waterwala"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
+			class="p-2 text-white bg-transparent border rounded border-brightGrey active:border-partyPurple active:ring-partyPurple"
 		/>
 
 		<label
 			for="username"
-			class="text-white text-sm mt-8 mb-2 uppercase font-semibold"
+			class="mt-8 mb-2 text-sm font-semibold text-white uppercase"
 		>
 			Username
 		</label>
@@ -114,12 +114,12 @@
 			name="username"
 			id="username"
 			placeholder="johndoe"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
+			class="p-2 text-white bg-transparent border rounded border-brightGrey active:border-partyPurple active:ring-partyPurple"
 		/>
 
 		<label
 			for="email"
-			class="text-white text-sm mt-8 mb-2 uppercase font-semibold"
+			class="mt-8 mb-2 text-sm font-semibold text-white uppercase"
 		>
 			Email
 		</label>
@@ -128,12 +128,12 @@
 			name="email"
 			id="email"
 			placeholder="example@gmail.com"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
+			class="p-2 text-white bg-transparent border rounded border-brightGrey active:border-partyPurple active:ring-partyPurple"
 		/>
 
 		<label
 			for="password"
-			class="text-white text-sm mt-8 mb-2 uppercase font-semibold"
+			class="mt-8 mb-2 text-sm font-semibold text-white uppercase"
 		>
 			Password
 		</label>
@@ -142,12 +142,12 @@
 			name="password"
 			id="password"
 			placeholder="******"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 text-white"
+			class="p-2 text-white bg-transparent border rounded border-brightGrey active:border-partyPurple active:ring-partyPurple"
 		/>
 
 		<label
 			for="confpassword"
-			class="text-white text-sm mt-8 mb-2 uppercase font-semibold"
+			class="mt-8 mb-2 text-sm font-semibold text-white uppercase"
 		>
 			Confirm Password
 		</label>
@@ -156,19 +156,19 @@
 			name="confpassword"
 			id="confpassword"
 			placeholder="******"
-			class="border border-brightGrey active:border-partyPurple active:ring-partyPurple rounded bg-transparent p-2 mb-8 text-white"
+			class="p-2 mb-8 text-white bg-transparent border rounded border-brightGrey active:border-partyPurple active:ring-partyPurple"
 		/>
 
 		<button
 			type="submit"
-			class="bg-partyPurple text-spaceGrey rounded py-2 font-bold uppercase"
+			class="py-2 font-bold uppercase rounded bg-partyPurple text-spaceGrey"
 		>
 			Sign Up
 		</button>
 	</form>
 
 	<button
-		class="flex justify-center items-center gap-2 border border-partyPurple text-darkWhite bg-transparent hover:bg-partyPurple w-full sm:w-1/2 lg:w-1/3 rounded py-2 font-bold uppercase"
+		class="flex items-center justify-center w-full gap-2 py-2 font-bold uppercase bg-transparent border rounded border-partyPurple text-darkWhite hover:bg-partyPurple sm:w-1/2 lg:w-1/3"
 	>
 		<img src="{BrandGoogle}" alt="Google Icon" class="h-4" />
 		<span> Sign in with Google </span>

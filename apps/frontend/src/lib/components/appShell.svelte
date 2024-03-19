@@ -9,7 +9,7 @@
 	import ContractsIcon from '../../assets/icons/contracts.png';
 	import ProfileIcon from '../../assets/icons/profile.png';
 	import SettingsIcon from '../../assets/icons/settings.png';
-	import marketPlaceIcon from '../../assets/icons/marketPlaceIcon.png'; 
+	import marketPlaceIcon from '../../assets/icons/marketPlaceIcon.png';
 </script>
 
 <div class="w-full min-h-screen bg-[#121212] flex flex-col">
@@ -17,11 +17,11 @@
 		<img src="{UnmuteIcon}" alt="Unmute Logo" class="w-8 h-8 mr-2" />
 	</div>
 
-	<div class="flex-grow flex w-full">
+	<div class="flex flex-grow w-full">
 		<div
 			class="w-fit bg-[#FFFFFF05] px-8 py-12 border-r border-[#3C3C4399]"
 		>
-			<ul class="list-none p-0 text-darkWhite">
+			<ul class="p-0 list-none text-darkWhite">
 				<li class="mb-10">
 					<Link to="/dashboard" class="flex items-center">
 						<img
@@ -41,7 +41,7 @@
 					</Link>
 				</li>
 				<li class="mb-10">
-					<Link to="/chats" class="flex items-center">
+					<Link to="/chat" class="flex items-center">
 						<img
 							src="{ChatsIcon}"
 							alt="Chats"
@@ -107,7 +107,7 @@
 		</div>
 
 		<div
-			class="p-4 w-full"
+			class="w-full p-4"
 			style="background: linear-gradient(180deg, rgba(20, 179, 118, 0.05) 0%, rgba(17, 25, 40, 0.00) 50%);"
 		>
 			<slot />

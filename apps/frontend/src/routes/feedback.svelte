@@ -36,6 +36,7 @@
 <div class="flex p-8">
 	<div class="w-2/3">
 		<h1 class="mb-2 text-2xl text-white font-ownersTrialWide">Threads</h1>
+		<p class="text-darkWhite">(No feedbacks for this track yet.)</p>
 	</div>
 
 	<div class="flex flex-col w-1/3">

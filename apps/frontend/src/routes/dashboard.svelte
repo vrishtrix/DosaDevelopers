@@ -24,7 +24,7 @@
 	import Tile2 from '../assets/icons/tile2.png';
 	import Tile3 from '../assets/icons/tile3.png';
 	import Tile4 from '../assets/icons/tile4.png';
-	import marketPlaceIcon from '../assets/icons/marketPlaceIcon.png'; 
+	import marketPlaceIcon from '../assets/icons/marketPlaceIcon.png';
 	import DownArrowIcon from '../assets/icons/arrow-down.svg';
 	import Player from '../lib/components/player/Player.svelte';
 	import { navigate } from 'svelte-routing';
@@ -61,17 +61,17 @@
 			/>
 		</div>
 
-		<div class="ml-auto flex gap-4">
+		<div class="flex gap-4 ml-auto">
 			<div class="absolute z-20 right-5 offset-top">
 				{#if $open}
 					<div
 						use:melt="{$content}"
 						transition:slide
-						class="bg-brightGrey text-white p-4 rounded"
+						class="p-4 text-white rounded bg-brightGrey"
 					>
 						<button
 							on:click="{signOut}"
-							class="bg-partyPurple text-spaceGrey rounded py-2 px-4 font-bold uppercase"
+							class="px-4 py-2 font-bold uppercase rounded bg-partyPurple text-spaceGrey"
 						>
 							Sign Out
 						</button>
@@ -81,7 +81,7 @@
 			<img
 				src="https://i.pravatar.cc/300?img=3"
 				alt="Avatar"
-				class="h-10 w-10 rounded-full"
+				class="w-10 h-10 rounded-full"
 			/>
 
 			<button use:melt="{$trigger}" aria-label="Toggle">
@@ -99,7 +99,7 @@
 	</div>
 	<div class="flex flex-row">
 		<div class=" bg-[#FFFFFF05] p-8 border-r border-[#3C3C4399]">
-			<ul class="list-none p-0 text-white">
+			<ul class="p-0 text-white list-none">
 				<li class="mb-9">
 					<Link to="/dashboard" class="flex items-center">
 						<img
@@ -110,12 +110,12 @@
 					</Link>
 				</li>
 				<li class="mb-9">
-					<Link to="/drafts" class="flex items-center">
+					<Link to="/feedback" class="flex items-center">
 						<img
 							src="{DraftsIcon}"
 							alt="Drafts"
 							class="w-5 h-5 mr-2"
-						/> Drafts
+						/> Feedback
 					</Link>
 				</li>
 				<li class="mb-9">
@@ -186,17 +186,17 @@
 
 		<div class="flex flex-col">
 			<div class="p-8">
-				<div class="flex w-full items-center">
+				<div class="flex items-center w-full">
 					<img
 						src="{WelcomeAditya}"
 						alt="Welcome Aditya"
-						class="mr-4 mb-4"
+						class="mb-4 mr-4"
 					/>
-					<h2 class="text-white text-3xl font-semibold mb-4">
+					<h2 class="mb-4 text-3xl font-semibold text-white">
 						Welcome Aditya,
 					</h2>
 				</div>
-				<p class="text-gray-300 text-xl mb-4 ml-4">
+				<p class="mb-4 ml-4 text-xl text-gray-300">
 					Your Music Management Hub! Elevate your career with
 					analytics, gigs, and fan connections. Let's make music
 					magic!
@@ -205,14 +205,14 @@
 					<img
 						src="{RevenueGraph}"
 						alt="Revenue Graph"
-						class="w-96 h-56 mr-4"
+						class="h-56 mr-4 w-96"
 					/>
 					<img
 						src="{AudienceGraph}"
 						alt="Audience Graph"
-						class="w-96 h-56 mr-4"
+						class="h-56 mr-4 w-96"
 					/>
-					<img src="{FanGraph}" alt="Fan Graph" class="w-96 h-56" />
+					<img src="{FanGraph}" alt="Fan Graph" class="h-56 w-96" />
 				</div>
 			</div>
 			<div class="w-[80vw] p-8 overflow-auto no-scrollbar">
@@ -220,13 +220,13 @@
 					<img
 						src="{MusicBurn}"
 						alt="Welcome Aditya"
-						class="mr-4 mb-4"
+						class="mb-4 mr-4"
 					/>
-					<h2 class="text-white text-3xl font-semibold mb-4">
+					<h2 class="mb-4 text-3xl font-semibold text-white">
 						Your Music
 					</h2>
 				</div>
-				<div class="flex flex-nowrap w-screen gap-8">
+				<div class="flex w-screen gap-8 flex-nowrap">
 					<div
 						class="w-64 flex-shrink-0 flex flex-col items-center justify-center bg-[#252525] rounded-3xl p-4 scroll-snap-align-start"
 					>
@@ -235,7 +235,7 @@
 							alt="Tile1"
 							class="w-full h-auto mb-2"
 						/>
-						<h3 class="text-white text-lg font-semibold mb-2">
+						<h3 class="mb-2 text-lg font-semibold text-white">
 							The Less I Know T...
 						</h3>
 						<button
@@ -253,7 +253,7 @@
 							alt="Tile2"
 							class="w-full h-auto mb-2"
 						/>
-						<h3 class="text-white text-lg font-semibold mb-2">
+						<h3 class="mb-2 text-lg font-semibold text-white">
 							Zakir
 						</h3>
 						<button
@@ -271,7 +271,7 @@
 							alt="Tile3"
 							class="w-full h-auto mb-2"
 						/>
-						<h3 class="text-white text-lg font-semibold mb-2">
+						<h3 class="mb-2 text-lg font-semibold text-white">
 							FE!N
 						</h3>
 						<button
@@ -289,7 +289,7 @@
 							alt="Tile4"
 							class="w-full h-auto mb-2"
 						/>
-						<h3 class="text-white text-lg font-semibold mb-2">
+						<h3 class="mb-2 text-lg font-semibold text-white">
 							Zakir
 						</h3>
 						<button
@@ -307,7 +307,7 @@
 							alt="Tile4"
 							class="w-full h-auto mb-2"
 						/>
-						<h3 class="text-white text-lg font-semibold mb-2">
+						<h3 class="mb-2 text-lg font-semibold text-white">
 							Zakir
 						</h3>
 						<button
