@@ -10,7 +10,7 @@
 
 	import { messages, username } from '../lib/store/user';
 	import { navigate } from 'svelte-routing';
-	import { isAuthenticated, signOut } from '../lib/middleware/auth';
+	import { isAuthenticated } from '../lib/middleware/auth';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

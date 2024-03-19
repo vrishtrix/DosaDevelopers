@@ -118,7 +118,7 @@
 					</Link>
 				</li>
 				<li class="mb-9">
-					<Link to="/chats" class="flex items-center">
+					<Link to="/chat" class="flex items-center">
 						<img
 							src="{ChatsIcon}"
 							alt="Chats"

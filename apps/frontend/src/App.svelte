@@ -17,6 +17,7 @@
 	import ChatPage from './routes/chat.svelte';
 	import ContractsPage from './routes/contracts.svelte';
 	import MarketplacePage from './routes/marketplace.svelte';
+	import FeedbackPage from './routes/feedback.svelte';
 
 	const basepath = '/';
 
@@ -42,4 +43,5 @@
 	<Route path="/chat" component="{ChatPage}" />
 	<Route path="/contracts" component="{ContractsPage}" />
 	<Route path="/marketplace" component="{MarketplacePage}" />
+	<Route path="/feedback" component="{FeedbackPage}" />
 </Router>
