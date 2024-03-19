@@ -5,11 +5,11 @@
 	import DraftsIcon from '../../assets/icons/drafts.png';
 	import ChatsIcon from '../../assets/icons/chats.png';
 	import ExploreIcon from '../../assets/icons/explore.png';
-	import WebsiteBuilderIcon from '../../assets/icons/websiteBuilder.png';
 	import PaymentsIcon from '../../assets/icons/payments.png';
 	import ContractsIcon from '../../assets/icons/contracts.png';
 	import ProfileIcon from '../../assets/icons/profile.png';
 	import SettingsIcon from '../../assets/icons/settings.png';
+	import marketPlaceIcon from '../../assets/icons/marketPlaceIcon.png'; 
 </script>
 
 <div class="w-full min-h-screen bg-[#121212] flex flex-col">
@@ -59,10 +59,10 @@
 					</Link>
 				</li>
 				<li class="mb-10">
-					<Link to="/website-builder" class="flex items-center">
+					<Link to="/marketplace" class="flex items-center">
 						<img
-							src="{WebsiteBuilderIcon}"
-							alt="Website Builder"
+							src="{marketPlaceIcon}"
+							alt="MarketPlace"
 							class="w-5 h-5 mr-2"
 						/>
 					</Link>
